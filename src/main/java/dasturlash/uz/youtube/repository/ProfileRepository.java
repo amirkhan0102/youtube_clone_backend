@@ -1,2 +1,8 @@
-package dasturlash.uz.youtube.repository;public class ProfileRepository {
+package dasturlash.uz.youtube.repository;
+
+import dasturlash.uz.youtube.entity.ProfileEntity;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer> {
+
 }
