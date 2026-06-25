@@ -34,7 +34,6 @@ build/
 
 ### Bizning qo'shimchalar ###
 # Maxfiy sozlamalar
-src/main/resources/application.properties
 
 # Yuklangan fayllar
 uploads/
