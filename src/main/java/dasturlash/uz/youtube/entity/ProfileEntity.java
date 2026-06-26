@@ -26,8 +26,11 @@ public class ProfileEntity {
     @Column(name = "surname", nullable = false)
     private String surname;
 
+//    @Column(name = "username", nullable = false)
+//    private String username;
 
-    @Column(name = "email", nullable = false)
+
+    @Column(name = "email", nullable = false,unique = true)
     private String email;
 
     @Column(name = "password", nullable = false)

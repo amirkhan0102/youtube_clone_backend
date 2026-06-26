@@ -1,0 +1,10 @@
+### Registration
+POST http://localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "name": "Ali",
+  "surname": "Valiyev",
+  "email": "ali@gmail.com",
+  "password": "123456"
+}
