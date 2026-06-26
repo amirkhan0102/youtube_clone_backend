@@ -1,7 +1,8 @@
 package dasturlash.uz.youtube.entity;
 
 
-import dasturlash.uz.youtube.enums.ProfileStatus;
+import dasturlash.uz.youtube.enums.ProfileRoleEnum;
+import dasturlash.uz.youtube.enums.ProfileStatusEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +37,7 @@ public class ProfileEntity {
 
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    private ProfileStatus status;
+    private ProfileStatusEnum status;
 
     @Column(name = "photo_id")
     private String photoId; //
@@ -44,6 +45,9 @@ public class ProfileEntity {
     @Column(name = "visible", nullable = false)
     private Boolean visible = true;
 
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private ProfileRoleEnum role;
 
     @CreationTimestamp
     @Column(name = "created_date")

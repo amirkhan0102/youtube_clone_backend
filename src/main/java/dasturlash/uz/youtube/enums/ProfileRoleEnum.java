@@ -2,8 +2,6 @@ package dasturlash.uz.youtube.enums;
 
 public enum ProfileRoleEnum {
 
-   ADMIN, MODERATOR, USER;
-
-
+   ROLE_USER, ROLE_ADMIN, ROLE_OWNER
 
 }
