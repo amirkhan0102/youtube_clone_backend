@@ -12,7 +12,7 @@ import lombok.Setter;
 public class ChannelEntity {
 
     @Id
-    private String id; // uuid
+    private String id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -24,16 +24,27 @@ public class ChannelEntity {
     @Column(name = "status", nullable = false)
     private ChannelStatusEnum status;
 
-    @Column(name = "banner")
-    private String banner;
-
-    // Profile bilan join
+    // Profile join
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", nullable = false)
     private ProfileEntity profile;
 
-    // Photo (Attach bilan join)
+    @Column(name = "profile_id", insertable = false, updatable = false)
+    private Integer profileId;
+
+    // Photo join
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "photo_id")
     private AttachEntity photo;
+
+    @Column(name = "photo_id", insertable = false, updatable = false)
+    private String photoId; // ← qo'shildi
+
+    // Banner join
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "banner_id")
+    private AttachEntity bannerAttach;
+
+    @Column(name = "banner_id", insertable = false, updatable = false)
+    private String banner; // ← qo'shildi
 }

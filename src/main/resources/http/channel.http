@@ -1,0 +1,59 @@
+### 1. Create Channel (USER)
+POST http://localhost:8080/api/channel
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjM3OTAsImV4cCI6MTc4MjY1MDE5MH0.NlE-gBsfmpVGJSHZp6bsykgOVPR6Q2xBe3YdsenNOq0
+
+{
+  "name": "My Channel",
+  "description": "My channel description"
+}
+
+###
+
+### 2. Update Channel (USER and OWNER)
+PUT http://localhost:8080/api/channel/a80538ec-4da4-4a89-a420-21dcce7bd24a
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjM3OTAsImV4cCI6MTc4MjY1MDE5MH0.NlE-gBsfmpVGJSHZp6bsykgOVPR6Q2xBe3YdsenNOq0
+
+
+{
+  "name": "Updated Channel",
+  "description": "Updated description"
+}
+
+###
+
+### 3. Update Photo (USER and OWNER)
+PUT http://localhost:8080/api/channel/a80538ec-4da4-4a89-a420-21dcce7bd24a/photo?attachId=ATTACH_ID
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjM3OTAsImV4cCI6MTc4MjY1MDE5MH0.NlE-gBsfmpVGJSHZp6bsykgOVPR6Q2xBe3YdsenNOq0
+
+###
+
+### 4. Update Banner (USER and OWNER)
+PUT http://localhost:8080/api/channel/a80538ec-4da4-4a89-a420-21dcce7bd24a/banner?attachId=ATTACH_ID
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjM3OTAsImV4cCI6MTc4MjY1MDE5MH0.NlE-gBsfmpVGJSHZp6bsykgOVPR6Q2xBe3YdsenNOq0
+
+###
+
+### 5. Channel Pagination (ADMIN)
+GET http://localhost:8080/api/channel/pagination?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 6. Get Channel By Id
+GET http://localhost:8080/api/channel/a80538ec-4da4-4a89-a420-21dcce7bd24a
+
+###
+
+### 7. Change Status (ACTIVE yoki BLOCK)
+PATCH http://localhost:8080/api/channel/a80538ec-4da4-4a89-a420-21dcce7bd24a/status?status=BLOCK
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjM3OTAsImV4cCI6MTc4MjY1MDE5MH0.NlE-gBsfmpVGJSHZp6bsykgOVPR6Q2xBe3YdsenNOq0
+
+###
+
+### 8. My Channels
+GET http://localhost:8080/api/channel/my
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjM3OTAsImV4cCI6MTc4MjY1MDE5MH0.NlE-gBsfmpVGJSHZp6bsykgOVPR6Q2xBe3YdsenNOq0
+
+###
