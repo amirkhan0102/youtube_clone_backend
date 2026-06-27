@@ -2,6 +2,7 @@ package dasturlash.uz.youtube.controller;
 
 import dasturlash.uz.youtube.dto.ChangePasswordDTO;
 import dasturlash.uz.youtube.dto.CreateProfileDTO;
+import dasturlash.uz.youtube.dto.ProfileDetailDTO;
 import dasturlash.uz.youtube.dto.UpdateProfileDetailDTO;
 import dasturlash.uz.youtube.service.ProfileService;
 import jakarta.validation.Valid;
