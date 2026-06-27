@@ -1,28 +1,32 @@
 package dasturlash.uz.youtube.exception;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(AppBadException.class)
-    public ResponseEntity<String> handle(AppBadException e) {
+    public ResponseEntity<String> handleAppBadException(AppBadException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> handleValidation(MethodArgumentNotValidException e) {
-        FieldError fieldError = e.getBindingResult().getFieldError();
+    public ResponseEntity<Map<String, String>> handleValidation(
+            MethodArgumentNotValidException e) {
+        Map<String, String> errors = new LinkedHashMap<>();
+        e.getBindingResult().getFieldErrors()
+                .forEach(err -> errors.put(err.getField(), err.getDefaultMessage()));
+        return ResponseEntity.badRequest().body(errors);
+    }
 
-        if (fieldError != null) {
-            return ResponseEntity.badRequest().body(fieldError.getDefaultMessage());
-        }
-
-        return ResponseEntity.badRequest().body("Validation error");
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleException(Exception e) {
+        return ResponseEntity.internalServerError().body("Something went wrong");
     }
 }

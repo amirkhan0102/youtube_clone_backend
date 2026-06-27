@@ -1,5 +1,7 @@
 package dasturlash.uz.youtube.controller;
 
+import dasturlash.uz.youtube.dto.auth.AuthResponseDTO;
+import dasturlash.uz.youtube.dto.auth.LoginDTO;
 import dasturlash.uz.youtube.dto.auth.RegistrationDTO;
 import dasturlash.uz.youtube.service.AuthService;
 import jakarta.validation.Valid;
@@ -16,8 +18,16 @@ public class AuthController {
 
     @PostMapping("/registration")
     public ResponseEntity<String> registration(@Valid @RequestBody RegistrationDTO dto) {
-        authService.registration(dto);
-        return ResponseEntity.ok("Registration successfully completed.");
+        return ResponseEntity.ok(authService.registration(dto));
     }
 
+    @GetMapping("/verification/{token}")
+    public ResponseEntity<String> verify(@PathVariable String token) {
+        return ResponseEntity.ok(authService.verifyEmail(token));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponseDTO> login(@Valid @RequestBody LoginDTO dto) {
+        return ResponseEntity.ok(authService.login(dto));
+    }
 }

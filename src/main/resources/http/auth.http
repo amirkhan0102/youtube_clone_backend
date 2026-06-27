@@ -1,10 +1,93 @@
-### Registration
+### 1. Registration
 POST http://localhost:8080/auth/registration
 Content-Type: application/json
 
 {
-  "name": "Ali",
-  "surname": "Valiyev",
-  "email": "ali@gmail.com",
+  "name": "Amir",
+  "surname": "Karimov",
+  "email": "amir@gmail.com",
   "password": "123456"
 }
+
+###
+
+### 2. Login - NOT_ACTIVE (email tasdiqlanmagan)
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "amir@gmail.com",
+  "password": "123456"
+}
+
+###
+
+### 3. Verify Email (emaildan kelgan linkdagi tokenni qo'ying)
+GET http://localhost:8080/auth/verification/eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiVVNFUiJdLCJpYXQiOjE3ODI1NDU1NzYsImV4cCI6MTc4MjYzMTk3Nn0.omAszDdtYIr0zTRCQrvKdkI9jhO_GrRp0WdIyXA-JaA
+
+
+###
+
+### 4. Login - ACTIVE (email tasdiqlanganidan keyin)
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "amir@gmail.com",
+  "password": "123456"
+}
+
+###
+
+### 5. Login - noto'g'ri parol
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "amir@gmail.com",
+  "password": "2434234"
+}
+
+###
+
+### 6. Login - mavjud bo'lmagan email
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "Assda@gmail.com",
+  "password": "123456"
+}
+
+###
+
+### 7. Registration - validation xato (qisqa parol)
+POST http://localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "name": "A",
+  "surname": "K",
+  "email": "invalid-email",
+  "password": "123"
+}
+
+###
+
+### 8. Registration - email allaqachon mavjud
+POST http://localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "name": "Amir",
+  "surname": "Karimov",
+  "email": "amir@gmail.com",
+  "password": "123456"
+}
+
+###
+
+### 9. Verify Email - noto'g'ri token
+GET http://localhost:8080/auth/verification/eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiVVNFUiJdLCJpYXQiOjE3ODI1NDU1NzYsImV4cCI6MTc4MjYzMTk3Nn0.omAszDdtYIr0zTRCQrvKdkI9jhO_GrRp0WdIyXA-Ja
+
+###

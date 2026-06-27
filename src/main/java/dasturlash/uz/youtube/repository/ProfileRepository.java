@@ -6,6 +6,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -17,14 +18,24 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer
 
     boolean existsByEmailAndVisibleTrue(String email);
 
-    Optional<ProfileEntity> findByIdAndVisibleTrue(Integer id);
 
-    @Transactional
     @Modifying
+    @Transactional
     @Query("""
-            update ProfileEntity p
-            set p.status = ?2
-            where p.email = ?1
-            """)
-    int updateStatusByEmail(String email, ProfileStatus status);
+       update ProfileEntity p
+       set p.status = :status
+       where p.email = :email
+       """)
+    void updateStatus(@Param("email") String email,
+                      @Param("status") ProfileStatus status);
+
+
+    @Query("""
+    SELECT DISTINCT p
+    FROM ProfileEntity p
+    LEFT JOIN FETCH p.roleList
+    WHERE p.email = :email
+      AND p.visible = true
+""")
+    Optional<ProfileEntity> findByEmailWithRoles(@Param("email") String email);
 }

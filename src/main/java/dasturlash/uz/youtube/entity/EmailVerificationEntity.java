@@ -3,28 +3,27 @@ package dasturlash.uz.youtube.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "email_history")
+@Table(name = "email_verification")
 @Getter
 @Setter
-public class EmailHistoryEntity {
+public class EmailVerificationEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "to_email", nullable = false)
-    private String toEmail;
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false, length = 500)
+    private String token;
 
     @Column(nullable = false)
-    private String title;
-
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String message;
+    private Boolean verified = false;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate;
