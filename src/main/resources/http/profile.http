@@ -1,0 +1,44 @@
+### 1. Change Password
+PUT http://localhost:8080/api/profile/change-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZCI6MTIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTQ4OTM1LCJleHAiOjE3ODI2MzUzMzV9.VmNATA6YB21G6GCBS6dXB2IAFRKVzXVXfHrgPA4INGo
+
+{
+  "oldPassword": "123456",
+  "newPassword": "654321"
+}
+
+###
+
+### 3. Update Profile Detail
+PUT http://localhost:8080/api/profile/detail
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZCI6MTIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTQ4OTM1LCJleHAiOjE3ODI2MzUzMzV9.VmNATA6YB21G6GCBS6dXB2IAFRKVzXVXfHrgPA4INGo
+
+{
+  "name": "Amir",
+  "surname": "Toshmatov"
+}
+
+###
+
+### 5. Get Profile Detail
+GET http://localhost:8080/api/profile/detail
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZCI6MTIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTQ4OTM1LCJleHAiOjE3ODI2MzUzMzV9.VmNATA6YB21G6GCBS6dXB2IAFRKVzXVXfHrgPA4INGo
+
+###
+
+### 6. Create Profile (ADMIN token kerak)
+POST http://localhost:8080/api/profile/admin/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTQ5NjQxLCJleHAiOjE3ODI2MzYwNDF9.hwAP5gk-LtJq9yRY04CEZzeR28ojxrcWL00NJu8-cwM
+
+{
+  "name": "Moderator",
+  "surname": "User",
+  "email": "moderator@gmail.com",
+  "password": "mod123456",
+  "role": "MODERATOR"
+}
+
+###
