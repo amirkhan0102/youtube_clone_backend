@@ -1,0 +1,35 @@
+### 1. Upload
+POST http://localhost:8080/attach/upload
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTU3MjIzLCJleHAiOjE3ODI2NDM2MjN9.ZIL6cvMZRW6_59rOlC1XYCUd9mndtm7v9EaLj6MUXDw
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="fon.jpg"
+Content-Type: image/jpeg
+
+< D:\for fun\pictures\fon.jpg
+--boundary--
+
+###
+
+### 2. Open
+GET http://localhost:8080/attach/open/UUID_HERE
+
+###
+
+### 3. Download
+GET http://localhost:8080/attach/download/UUID_HERE
+
+###
+
+### 4. Pagination (ADMIN)
+GET http://localhost:8080/attach/pagination?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN_HERE
+
+###
+
+### 5. Delete (ADMIN)
+DELETE http://localhost:8080/attach/UUID_HERE
+Authorization: Bearer ADMIN_TOKEN_HERE
+
+###

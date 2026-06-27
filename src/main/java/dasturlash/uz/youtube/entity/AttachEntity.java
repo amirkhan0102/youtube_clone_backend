@@ -1,11 +1,10 @@
 package dasturlash.uz.youtube.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "attach")
@@ -35,4 +34,11 @@ public class AttachEntity {
     private Boolean visible = true;
 
 
+//JPA (Java Persistence API) tizimidagi maxsus metod bo'lib,
+// ob'ekt ma'lumotlar bazasiga saqlanishidan oldin unga avtomatik ravishda noyob
+// (unikal) ID biriktirish uchun ishlatiladi.
+    @PrePersist
+    public void prePersist() {
+        this.id = UUID.randomUUID().toString();
+    }
 }
