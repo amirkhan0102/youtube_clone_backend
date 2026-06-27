@@ -1,13 +1,15 @@
 package dasturlash.uz.youtube.repository;
 
 import dasturlash.uz.youtube.entity.TagEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface TagRepository extends CrudRepository<TagEntity, Integer> {
-
-    @Query("from TagEntity order by createdDate desc")
-    List<TagEntity> getAllByOrderByCreatedDateDesc();
+@Repository
+public interface TagRepository extends JpaRepository<TagEntity, Integer> {
+    boolean existsByName(String name);
+    List<TagEntity> findAllByVisibleTrue();
 }

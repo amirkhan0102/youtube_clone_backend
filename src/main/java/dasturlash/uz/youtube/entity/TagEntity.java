@@ -25,4 +25,6 @@ public class TagEntity {
     @Column(name = "created_date")
     private LocalDateTime  createdDate;
 
+    @Column(name = "visible", nullable = false)
+    private Boolean visible = true;
 }

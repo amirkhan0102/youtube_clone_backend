@@ -53,7 +53,8 @@ public class SecurityConfig {
                                 "/auth/verification/**",
                                 "/auth/login",
                                 "/attach/download/**",
-                                "/attach/open/**"
+                                "/attach/open/**",
+                                "/api/tag/**"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )

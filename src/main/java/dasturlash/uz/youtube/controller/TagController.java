@@ -1,10 +1,10 @@
 package dasturlash.uz.youtube.controller;
 
-import dasturlash.uz.youtube.dto.tag.request.TagRequestDTO;
-import dasturlash.uz.youtube.dto.tag.request.TagUpdateRequestDTO;
-import dasturlash.uz.youtube.dto.tag.responce.TagResponseDTO;
+import dasturlash.uz.youtube.dto.tag.CreateTagDTO;
+import dasturlash.uz.youtube.dto.tag.TagDTO;
 import dasturlash.uz.youtube.service.TagService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -12,31 +12,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tag")
+@RequestMapping("/api/tag")
+@RequiredArgsConstructor
 public class TagController {
 
-    @Autowired
-    private TagService tagService;
+    private final TagService tagService;
 
-    @PostMapping("/create")
-    public ResponseEntity<TagResponseDTO> create(@RequestBody TagRequestDTO dto) {
+    // 1. Create
+    @PreAuthorize("isAuthenticated()")
+    @PostMapping
+    public ResponseEntity<TagDTO> create(@Valid @RequestBody CreateTagDTO dto) {
         return ResponseEntity.ok(tagService.create(dto));
     }
 
+    // 2. Update (ADMIN)
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/update")
-    public ResponseEntity<TagResponseDTO> update(@RequestBody TagUpdateRequestDTO dto) {
-        return ResponseEntity.ok(tagService.update(dto));
+    @PutMapping("/{id}")
+    public ResponseEntity<TagDTO> update(@PathVariable Integer id,
+                                         @Valid @RequestBody CreateTagDTO dto) {
+        return ResponseEntity.ok(tagService.update(id, dto));
     }
 
+    // 3. Delete (ADMIN)
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
         return ResponseEntity.ok(tagService.delete(id));
     }
 
-    @GetMapping("/get-all")
-    public ResponseEntity<List<TagResponseDTO>> getAll(){
-        return ResponseEntity.ok(tagService.getAll());
+    // 4. List
+    @GetMapping
+    public ResponseEntity<List<TagDTO>> list() {
+        return ResponseEntity.ok(tagService.list());
     }
 }

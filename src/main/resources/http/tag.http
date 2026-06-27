@@ -1,0 +1,33 @@
+### 1. Create Tag
+POST http://localhost:8080/api/tag
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMkBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjE2NzQsImV4cCI6MTc4MjY0ODA3NH0.irJK3pQxF8Ex7uJOeAnms2h7IjHz5OK2nEIKbdBlrlc
+
+
+{
+  "name": "WC2026"
+}
+
+###
+
+### 2. Update Tag (ADMIN)
+PUT http://localhost:8080/api/tag/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
+
+{
+  "name": "Spring Boot"
+}
+
+###
+
+### 3. Delete Tag (ADMIN)
+DELETE http://localhost:8080/api/tag/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
+
+###
+
+### 4. Tag List
+GET http://localhost:8080/api/tag
+
+###
