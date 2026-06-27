@@ -14,19 +14,15 @@ import java.time.LocalDateTime;
 @Table(name = "tag")
 public class TagEntity {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
-
-    @Column(name = "visible", nullable = false)
-    private Boolean visible = true;
 
     @CreationTimestamp
     @Column(name = "created_date")
-    private LocalDateTime createdDate;
+    private LocalDateTime  createdDate;
 
 }
