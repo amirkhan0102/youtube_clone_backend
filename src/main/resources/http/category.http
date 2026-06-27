@@ -1,0 +1,32 @@
+### 1. Create Category (ADMIN)
+POST http://localhost:8080/api/category
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYwMzU4LCJleHAiOjE3ODI2NDY3NTh9.PL50hUG2HBGI0Qlarykk3LFy9W-SDS8z4CbXWTeTOBs
+
+{
+  "name": "World"
+}
+
+###
+
+### 2. Update Category (ADMIN)
+PUT http://localhost:8080/api/category/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYwMzU4LCJleHAiOjE3ODI2NDY3NTh9.PL50hUG2HBGI0Qlarykk3LFy9W-SDS8z4CbXWTeTOBs
+
+{
+  "name": "Science"
+}
+
+###
+
+### 3. Delete Category (ADMIN)
+DELETE http://localhost:8080/api/category/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYwMzU4LCJleHAiOjE3ODI2NDY3NTh9.PL50hUG2HBGI0Qlarykk3LFy9W-SDS8z4CbXWTeTOBs
+
+###
+
+### 4. Category List
+GET http://localhost:8080/api/category
+
+###
