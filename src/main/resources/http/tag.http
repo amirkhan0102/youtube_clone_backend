@@ -5,7 +5,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMkBnbWFpbC5jb20iLCJpY
 
 
 {
-  "name": "WC2026"
+  "name": "Uzb"
 }
 
 ###
@@ -16,7 +16,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
 
 {
-  "name": "Spring Boot"
+  "name": "C++"
 }
 
 ###

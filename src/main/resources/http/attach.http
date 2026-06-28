@@ -24,12 +24,12 @@ GET http://localhost:8080/attach/download/UUID_HERE
 
 ### 4. Pagination (ADMIN)
 GET http://localhost:8080/attach/pagination?page=0&size=10
-Authorization: Bearer ADMIN_TOKEN_HERE
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
 
 ###
 
 ### 5. Delete (ADMIN)
 DELETE http://localhost:8080/attach/UUID_HERE
-Authorization: Bearer ADMIN_TOKEN_HERE
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
 
 ###

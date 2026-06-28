@@ -1,0 +1,17 @@
+### 1. All Pagination (ADMIN)
+GET http://localhost:8080/api/email-history/pagination?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 2. By Email (ADMIN)
+GET http://localhost:8080/api/email-history/by-email?email=test@gmail.com&page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 3. Filter (ADMIN)
+GET http://localhost:8080/api/email-history/filter?email=test@gmail.com&from=2026-01-01T00:00:00&to=2026-12-31T23:59:59&page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###

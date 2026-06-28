@@ -22,7 +22,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkI
 
 ### 3. Delete Category (ADMIN)
 DELETE http://localhost:8080/api/category/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYwMzU4LCJleHAiOjE3ODI2NDY3NTh9.PL50hUG2HBGI0Qlarykk3LFy9W-SDS8z4CbXWTeTOBs
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
 
 ###
 

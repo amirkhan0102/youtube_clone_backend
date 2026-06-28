@@ -1,11 +1,11 @@
 ### 1. Change Password
 PUT http://localhost:8080/api/profile/change-password
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZCI6MTIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTQ4OTM1LCJleHAiOjE3ODI2MzUzMzV9.VmNATA6YB21G6GCBS6dXB2IAFRKVzXVXfHrgPA4INGo
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGlAZ21haWwuY29tIiwiaWQiOjIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTcxMjI0LCJleHAiOjE3ODI2NTc2MjR9.cjCe_nEBqAG6CWEd90wSxWRqNVr2hvnhZ3-kOGBOIVo
 
 {
   "oldPassword": "123456",
-  "newPassword": "654321"
+  "newPassword": "changedpas12"
 }
 
 ###
@@ -13,10 +13,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZ
 ### 3. Update Profile Detail
 PUT http://localhost:8080/api/profile/detail
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZCI6MTIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTQ4OTM1LCJleHAiOjE3ODI2MzUzMzV9.VmNATA6YB21G6GCBS6dXB2IAFRKVzXVXfHrgPA4INGo
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGlAZ21haWwuY29tIiwiaWQiOjIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTcxMjI0LCJleHAiOjE3ODI2NTc2MjR9.cjCe_nEBqAG6CWEd90wSxWRqNVr2hvnhZ3-kOGBOIVo
 
 {
-  "name": "Amir",
+  "name": "ALIJON",
   "surname": "Toshmatov"
 }
 
@@ -24,7 +24,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZ
 
 ### 5. Get Profile Detail
 GET http://localhost:8080/api/profile/detail
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyMUBnbWFpbC5jb20iLCJpZCI6MTIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTQ4OTM1LCJleHAiOjE3ODI2MzUzMzV9.VmNATA6YB21G6GCBS6dXB2IAFRKVzXVXfHrgPA4INGo
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGlAZ21haWwuY29tIiwiaWQiOjIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTcxMjI0LCJleHAiOjE3ODI2NTc2MjR9.cjCe_nEBqAG6CWEd90wSxWRqNVr2hvnhZ3-kOGBOIVo
 
 ###
 
@@ -34,11 +34,11 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTQ5NjQxLCJleHAiOjE3ODI2MzYwNDF9.hwAP5gk-LtJq9yRY04CEZzeR28ojxrcWL00NJu8-cwM
 
 {
-  "name": "Moderator",
-  "surname": "User",
-  "email": "moderator@gmail.com",
-  "password": "mod123456",
-  "role": "MODERATOR"
+  "name": "Admin1",
+  "surname": "admin",
+  "email": "admin1@gmail.com",
+  "password": "admin1234",
+  "role": "ADMIN"
 }
 
 ###

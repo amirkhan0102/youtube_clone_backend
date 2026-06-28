@@ -37,7 +37,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpY
 
 ### 5. Channel Pagination (ADMIN)
 GET http://localhost:8080/api/channel/pagination?page=0&size=10
-Authorization: Bearer ADMIN_TOKEN
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
 
 ###
 
@@ -54,6 +54,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpY
 
 ### 8. My Channels
 GET http://localhost:8080/api/channel/my
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyNEBnbWFpbC5jb20iLCJpYXQiOjE3ODI1NjM3OTAsImV4cCI6MTc4MjY1MDE5MH0.NlE-gBsfmpVGJSHZp6bsykgOVPR6Q2xBe3YdsenNOq0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbWlyQGdtYWlsLmNvbSIsImlkIjoxMSwicm9sZXMiOlsiQURNSU4iXSwiaWF0IjoxNzgyNTYxNzUyLCJleHAiOjE3ODI2NDgxNTJ9.orfcq4gDeSMvZGbElBkuMZWQnNyf1fYnut3hJNDq3MA
 
 ###
