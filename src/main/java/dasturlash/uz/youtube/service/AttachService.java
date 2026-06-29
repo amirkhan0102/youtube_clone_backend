@@ -3,6 +3,7 @@ package dasturlash.uz.youtube.service;
 import dasturlash.uz.youtube.dto.attach.AttachPaginationDTO;
 import dasturlash.uz.youtube.dto.attach.AttachResponseDTO;
 import dasturlash.uz.youtube.entity.AttachEntity;
+import dasturlash.uz.youtube.exception.ItemNotFoundException;
 import dasturlash.uz.youtube.repository.AttachRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,6 +34,9 @@ public class AttachService {
 
     @Value("${server.url}")
     private String serverUrl;
+
+    @Value("${server.url}")
+    private String attachUrl;
 
     // 1. Upload
     public AttachResponseDTO upload(MultipartFile file) {
@@ -166,5 +170,14 @@ public class AttachService {
                 .size(entity.getSize())
                 .url(serverUrl + "/attach/open/" + entity.getId())
                 .build();
+    }
+
+    public AttachEntity findById(String attachId) {
+        return attachRepository.findById(attachId)
+                .orElseThrow(() -> new ItemNotFoundException("Attach not found"));
+    }
+
+    public String openURL(String fileName) {
+        return attachUrl + "/api/v1/attach/open/" + fileName;
     }
 }

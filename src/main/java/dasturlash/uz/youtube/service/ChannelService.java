@@ -153,4 +153,8 @@ public class ChannelService {
                         : null)
                 .build();
     }
+
+    public boolean isProfileChannelOwner(Integer profileId, String channelId) {
+        return channelRepository.findByIdAndProfileId(channelId, profileId) != null;
+    }
 }
