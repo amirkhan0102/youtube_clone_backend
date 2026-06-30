@@ -4,6 +4,9 @@ package dasturlash.uz.youtube.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -11,35 +14,40 @@ import lombok.Setter;
 @Entity
 public class CommentEntity {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-
-    @Column(name = "content", nullable = false, columnDefinition = "TEXT")
-    private String content;
-
-    @Column(name = "like_count")
-    private Long likeCount = 0L;
-
-    @Column(name = "dislike_count")
-    private Long dislikeCount = 0L;
-
-    // Profile
+    @Column(name = "profile_id")
+    private Integer profileId;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "profile_id", nullable = false)
+    @JoinColumn(name = "profile_id", insertable = false, updatable = false)
     private ProfileEntity profile;
 
-    // Video
+    @Column(name = "video_id")
+    private String videoId;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "video_id", nullable = false)
+    @JoinColumn(name = "video_id", insertable = false, updatable = false)
     private VideoEntity video;
 
-    // Reply
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reply_id")
-    private CommentEntity reply;
+    @Column(name = "content", columnDefinition = "TEXT")
+    private String content;
+
+    @Column(name = "reply_id")
+    private Integer replyId;
+
+    @Column(name = "like_count")
+    private Long likeCount;
+
+    @Column(name = "dislike_count")
+    private Long dislikeCount;
+
+    @Column(name = "created_date")
+    @CreationTimestamp
+    private LocalDateTime createdDate;
+
+    @Column(name = "visible")
+    private Boolean visible = Boolean.TRUE;
 
 
 }
