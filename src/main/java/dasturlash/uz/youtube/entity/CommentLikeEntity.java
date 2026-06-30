@@ -1,8 +1,10 @@
 package dasturlash.uz.youtube.entity;
 
+import dasturlash.uz.youtube.enums.EmotionEnum;
 import dasturlash.uz.youtube.enums.LikeTypeEnum;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -14,22 +16,25 @@ public class CommentLikeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(name = "created_date")
-    private LocalDateTime createdDate;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "type", nullable = false)
-    private LikeTypeEnum type;
-
-    // Profile
+    @Column(name = "profile_id")
+    private Integer profileId;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "profile_id", nullable = false)
+    @JoinColumn(name = "profile_id", insertable = false, updatable = false)
     private ProfileEntity profile;
 
-    // Comment
+    @Column(name = "comment_id")
+    private Integer commentId;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "comment_id", nullable = false)
+    @JoinColumn(name = "comment_id", insertable = false, updatable = false)
     private CommentEntity comment;
+
+    @Column(name = "created_date")
+    @CreationTimestamp
+    private LocalDateTime createdDate;
+
+    @Column(name = "emotion")
+    @Enumerated(EnumType.STRING)
+    private EmotionEnum emotionEnum;
 }
