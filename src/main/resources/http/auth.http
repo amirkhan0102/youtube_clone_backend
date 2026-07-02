@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "name": "Alibek",
   "surname": "Alijonov",
-  "email": "ali@gmail.com",
+  "email": "ALIi@gmail.com",
   "password": "123456"
 }
 
@@ -16,14 +16,14 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-  "email": "ali@gmail.com",
+  "email": "ALIi@gmail.com",
   "password": "123456"
 }
 
 ###
 
 ### 3. Verify Email (emaildan kelgan linkdagi tokenni qo'ying)
-GET http://localhost:8080/auth/verification/eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGlAZ21haWwuY29tIiwiaWQiOjIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNzgyNTcxMjI0LCJleHAiOjE3ODI2NTc2MjR9.cjCe_nEBqAG6CWEd90wSxWRqNVr2hvnhZ3-kOGBOIVo
+GET http://localhost:8080/auth/verification/eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBTElpQGdtYWlsLmNvbSIsImlkIjoxNywicm9sZXMiOlsiVVNFUiJdLCJpYXQiOjE3ODI4MDQ4MDEsImV4cCI6MTc4Mjg5MTIwMX0.YBWnc7t54IRBnJ7EjL2d0zgBp7NNaUVigY6q9nxmHnU
 
 ###
 
@@ -32,8 +32,8 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-  "email": "admin@gmail.com",
-  "password": "admin123"
+  "email": "amir@gmail.com",
+  "password": "123456"
 }
 
 ###

@@ -1,0 +1,65 @@
+### 1. Create Playlist
+POST http://localhost:8080/api/playlist
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "name": "My Playlist",
+  "description": "Test playlist",
+  "channelId": "CHANNEL_ID"
+}
+
+###
+
+### 2. Update Playlist
+PUT http://localhost:8080/api/playlist/1
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "name": "Updated Playlist",
+  "description": "Updated description",
+  "orderNum": 1
+}
+
+###
+
+### 3. Change Status
+PATCH http://localhost:8080/api/playlist/1/status?status=PUBLIC
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 4. Delete
+DELETE http://localhost:8080/api/playlist/1
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 5. Pagination (ADMIN)
+GET http://localhost:8080/api/playlist/pagination?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 6. By UserId (ADMIN)
+GET http://localhost:8080/api/playlist/by-user/1
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 7. My Playlists
+GET http://localhost:8080/api/playlist/my
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 8. Channel Playlists
+GET http://localhost:8080/api/playlist/channel/CHANNEL_ID
+
+###
+
+### 9. Playlist Detail
+GET http://localhost:8080/api/playlist/1
+
+###

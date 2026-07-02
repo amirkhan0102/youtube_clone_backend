@@ -32,4 +32,9 @@ public class PlaylistEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "channel_id", nullable = false)
     private ChannelEntity channel;
+
+    @Column(name = "channel_id", insertable = false, updatable = false)
+    private String channelId;
+
+
 }

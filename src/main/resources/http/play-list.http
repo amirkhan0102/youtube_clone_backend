@@ -1,0 +1,42 @@
+### 1. Create
+POST http://localhost:8080/api/playlist-video
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "playlistId": 1,
+  "videoId": "VIDEO_ID",
+  "orderNum": 1
+}
+
+###
+
+### 2. Update
+PUT http://localhost:8080/api/playlist-video
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "playlistId": 1,
+  "videoId": "VIDEO_ID",
+  "orderNum": 2
+}
+
+###
+
+### 3. Delete
+DELETE http://localhost:8080/api/playlist-video
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "playlistId": 1,
+  "videoId": "VIDEO_ID"
+}
+
+###
+
+### 4. Get by playlistId
+GET http://localhost:8080/api/playlist-video/1
+
+###

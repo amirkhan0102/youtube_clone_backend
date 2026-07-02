@@ -1,0 +1,72 @@
+### 1. Create Video
+POST http://localhost:8080/api/video
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "title": "My First Video",
+  "description": "Video description",
+  "attachId": "ATTACH_ID",
+  "previewAttachId": "PREVIEW_ATTACH_ID",
+  "categoryId": 1,
+  "channelId": "CHANNEL_ID",
+  "type": "VIDEO"
+}
+
+###
+
+### 2. Update Video
+PUT http://localhost:8080/api/video/VIDEO_ID
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "title": "Updated Title",
+  "description": "Updated description",
+  "categoryId": 1
+}
+
+###
+
+### 3. Change Status
+PATCH http://localhost:8080/api/video/VIDEO_ID/status?status=PUBLIC
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 4. Increase view
+POST http://localhost:8080/api/video/VIDEO_ID/view
+
+###
+
+### 5. By Category
+GET http://localhost:8080/api/video/by-category/1?page=0&size=10
+
+###
+
+### 6. Search
+GET http://localhost:8080/api/video/search?title=test&page=0&size=10
+
+###
+
+### 7. By Tag
+GET http://localhost:8080/api/video/by-tag/1?page=0&size=10
+
+###
+
+### 8. Get By Id
+GET http://localhost:8080/api/video/VIDEO_ID
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 9. Pagination (ADMIN)
+GET http://localhost:8080/api/video/pagination?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 10. Channel Videos
+GET http://localhost:8080/api/video/channel/CHANNEL_ID?page=0&size=10
+
+###

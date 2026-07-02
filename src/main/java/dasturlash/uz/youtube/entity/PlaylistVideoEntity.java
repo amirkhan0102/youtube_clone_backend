@@ -7,16 +7,15 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "playlist_video")
 @Getter
 @Setter
-@Table(name = "playlist_video")
-@Entity
 public class PlaylistVideoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+    private Long id;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate;
@@ -24,20 +23,16 @@ public class PlaylistVideoEntity {
     @Column(name = "order_num")
     private Integer orderNum;
 
-
-
-    // Playlist
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "playlist_id", nullable = false)
     private PlaylistEntity playlist;
 
-    // Video
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "video_id", nullable = false)
     private VideoEntity video;
 
-
-
-
-
+    @PrePersist
+    public void prePersist() {
+        this.createdDate = LocalDateTime.now();
+    }
 }
