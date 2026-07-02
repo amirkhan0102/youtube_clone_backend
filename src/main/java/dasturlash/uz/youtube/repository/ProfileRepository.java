@@ -9,6 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.lang.ScopedValue;
 import java.util.Optional;
 
 @Repository
@@ -38,4 +39,8 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer
       AND p.visible = true
 """)
     Optional<ProfileEntity> findByEmailWithRoles(@Param("email") String email);
+
+
+    @Query("from ProfileEntity where id=:id and status='ACTIVE'")
+    Optional<ProfileEntity> findByIdAndStatusIsActive(Integer id);
 }

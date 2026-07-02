@@ -314,4 +314,10 @@ public class VideoService {
 
         return dto;
     }
+
+    public VideoEntity get(String id) {
+        return videoRepository.findByIdAndVisibleIsTrue(id).orElseThrow(() -> {
+            throw new AppBadException("Video not found");
+        });
+    }
 }

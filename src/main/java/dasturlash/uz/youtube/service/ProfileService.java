@@ -15,6 +15,7 @@ import dasturlash.uz.youtube.util.JwtUtil;
 import dasturlash.uz.youtube.util.SecurityUtil;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ProfileService {
 
+    @Autowired
     private final ProfileRepository profileRepository;
     private final ProfileRoleRepository profileRoleRepository;
     private final PasswordEncoder passwordEncoder;
@@ -123,4 +125,11 @@ public class ProfileService {
                         : null)
                 .build();
     }
+
+    public ProfileEntity get(Integer id) {
+        return profileRepository.findByIdAndStatusIsActive(id).orElseThrow(() -> {
+            throw new AppBadException("Profile not found");
+        });
+    }
+
 }

@@ -157,4 +157,10 @@ public class ChannelService {
     public boolean isProfileChannelOwner(Integer profileId, String channelId) {
         return channelRepository.findByIdAndProfileId(channelId, profileId) != null;
     }
+
+    public ChannelEntity get(String id) {
+        return channelRepository.findByIdAndVisibleIsTrueAndStatusActive(id).orElseThrow(() -> {
+            throw new AppBadException("channel not found");
+        });
+    }
 }

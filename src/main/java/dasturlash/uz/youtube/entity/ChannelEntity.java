@@ -47,4 +47,7 @@ public class ChannelEntity {
 
     @Column(name = "banner_id", insertable = false, updatable = false)
     private String banner; // ← qo'shildi
+
+    @Column(name = "visible")
+    private Boolean visible = Boolean.TRUE;
 }
