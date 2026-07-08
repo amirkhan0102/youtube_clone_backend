@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Table(name = "comment")
@@ -25,6 +27,9 @@ public class CommentEntity {
 
     @Column(name = "dislike_count")
     private Long dislikeCount = 0L;
+
+    @Column(name = "created_date")
+    private LocalDateTime createdDate;
 
     // Profile
     @ManyToOne(fetch = FetchType.LAZY)

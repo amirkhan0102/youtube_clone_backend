@@ -1,0 +1,69 @@
+### 1. Create Comment
+POST http://localhost:8080/api/comment
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "videoId": "VIDEO_ID",
+  "content": "Bu video juda yaxshi!"
+}
+
+###
+
+### 1b. Reply Comment
+POST http://localhost:8080/api/comment
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "videoId": "VIDEO_ID",
+  "content": "Men ham roziman!",
+  "replyId": 1
+}
+
+###
+
+### 2. Update Comment
+PUT http://localhost:8080/api/comment/1
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "content": "Yangilangan comment"
+}
+
+###
+
+### 3. Delete Comment
+DELETE http://localhost:8080/api/comment/1
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 4. Pagination (ADMIN)
+GET http://localhost:8080/api/comment/pagination?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 5. By ProfileId (ADMIN)
+GET http://localhost:8080/api/comment/by-profile/1?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
+
+### 6. My Comments (USER)
+GET http://localhost:8080/api/comment/my?page=0&size=10
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 7. By VideoId
+GET http://localhost:8080/api/comment/by-video/VIDEO_ID?page=0&size=10
+
+###
+
+### 8. Replies
+GET http://localhost:8080/api/comment/replies/1?page=0&size=10
+
+###
