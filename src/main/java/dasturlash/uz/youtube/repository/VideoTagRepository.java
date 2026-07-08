@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface VideoTagRepository extends JpaRepository<VideoTagEntity, Long> {
@@ -16,6 +17,13 @@ public interface VideoTagRepository extends JpaRepository<VideoTagEntity, Long> 
 
     @Query("SELECT vt FROM VideoTagEntity vt JOIN FETCH vt.tag WHERE vt.video.id IN :videoIds")
     List<VideoTagEntity> findAllByVideoIds(@Param("videoIds") List<String> videoIds);
+
+
+    Optional<VideoTagEntity> findByVideoIdAndTagId(String videoId, Integer tagId);
+
+    boolean existsByVideoIdAndTagId(String videoId, Integer tagId);
+
+
 
     Page<VideoTagEntity> findAllByTagId(Integer tagId, Pageable pageable);
 }

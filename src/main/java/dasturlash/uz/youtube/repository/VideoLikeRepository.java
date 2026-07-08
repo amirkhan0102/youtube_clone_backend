@@ -1,4 +1,4 @@
-package dasturlash.uz.youtube.service;
+package dasturlash.uz.youtube.repository;
 
 import dasturlash.uz.youtube.entity.VideoLikeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,0 +1,28 @@
+### 1. Add tag to video
+POST http://localhost:8080/api/video-tag
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "videoId": "VIDEO_ID",
+  "tagId": 1
+}
+
+###
+
+### 2. Delete tag from video
+DELETE http://localhost:8080/api/video-tag
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "videoId": "VIDEO_ID",
+  "tagId": 1
+}
+
+###
+
+### 3. Get tag list by videoId
+GET http://localhost:8080/api/video-tag/VIDEO_ID
+
+###
