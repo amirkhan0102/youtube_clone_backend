@@ -1,0 +1,47 @@
+### 1. Subscribe
+POST http://localhost:8080/api/subscription
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "channelId": "CHANNEL_ID",
+  "notificationType": "ALL"
+}
+
+###
+
+### 2. Change Status
+PATCH http://localhost:8080/api/subscription/status
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "channelId": "CHANNEL_ID",
+  "status": "BLOCK"
+}
+
+###
+
+### 3. Change Notification Type
+PATCH http://localhost:8080/api/subscription/notification-type
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "channelId": "CHANNEL_ID",
+  "notificationType": "PERSONALIZED"
+}
+
+###
+
+### 4. My Subscriptions
+GET http://localhost:8080/api/subscription/my
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 5. By UserId (ADMIN)
+GET http://localhost:8080/api/subscription/by-user/1
+Authorization: Bearer ADMIN_TOKEN
+
+###

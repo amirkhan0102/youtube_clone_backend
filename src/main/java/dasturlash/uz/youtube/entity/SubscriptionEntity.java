@@ -2,7 +2,6 @@ package dasturlash.uz.youtube.entity;
 
 import dasturlash.uz.youtube.enums.NotificationType;
 import dasturlash.uz.youtube.enums.SubscriptionStatusEnum;
-import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,14 +30,12 @@ public class SubscriptionEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "notification_type", nullable = false)
-    private NotificationType notificationType;
+    private NotificationType notificationType;   // ← To'g'rilandi
 
-    // Profile
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", nullable = false)
     private ProfileEntity profile;
 
-    // Channel
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "channel_id", nullable = false)
     private ChannelEntity channel;

@@ -1,6 +1,9 @@
 package dasturlash.uz.youtube.enums;
 
 public enum NotificationType {
-    ALL, PERSONALIZED, NON
-
+    VIDEO_UPLOAD,
+    SUBSCRIPTION,
+    COMMENT,
+    LIKE,
+    REPLY,
 }
