@@ -1,0 +1,41 @@
+### 1. Like
+POST http://localhost:8080/api/video-like
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "videoId": "VIDEO_ID",
+  "type": "LIKE"
+}
+
+###
+
+### 1b. Dislike
+POST http://localhost:8080/api/video-like
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "videoId": "VIDEO_ID",
+  "type": "DISLIKE"
+}
+
+###
+
+### 2. Remove Like
+DELETE http://localhost:8080/api/video-like/VIDEO_ID
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 3. My Liked Videos
+GET http://localhost:8080/api/video-like/my?page=0&size=10
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 4. By UserId (ADMIN)
+GET http://localhost:8080/api/video-like/by-user/1?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
