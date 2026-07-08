@@ -30,7 +30,7 @@ public class VideoLikeService {
 
     private final VideoLikeRepository videoLikeRepository;
     private final VideoRepository videoRepository;
-    private final ProfileRepository profileRepository;   // ← Qo'shildi
+    private final ProfileRepository profileRepository;
 
     @Value("${server.url}")
     private String serverUrl;
@@ -68,7 +68,7 @@ public class VideoLikeService {
 
         // Create new
         VideoLikeEntity entity = new VideoLikeEntity();
-        entity.setProfile(profile);           // ← To'g'rilandi
+        entity.setProfile(profile);
         entity.setVideo(video);
         entity.setType(dto.getType());
         entity.setCreatedDate(LocalDateTime.now());

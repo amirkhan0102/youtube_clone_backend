@@ -1,0 +1,29 @@
+### 1. Like Comment
+POST http://localhost:8080/api/comment-like
+Content-Type: application/json
+Authorization: Bearer USER_TOKEN
+
+{
+  "commentId": 1,
+  "type": "LIKE"
+}
+
+###
+
+### 2. Remove Like
+DELETE http://localhost:8080/api/comment-like/1
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 3. My Liked Comments
+GET http://localhost:8080/api/comment-like/my?page=0&size=10
+Authorization: Bearer USER_TOKEN
+
+###
+
+### 4. By UserId (ADMIN)
+GET http://localhost:8080/api/comment-like/by-user/1?page=0&size=10
+Authorization: Bearer ADMIN_TOKEN
+
+###
