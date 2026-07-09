@@ -15,28 +15,41 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class NotificationEntity{
+public class NotificationEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "profile_id", nullable = false)
+    @JoinColumn(name = "profile_id")
     private ProfileEntity profile;
+
+    @Column(name = "profile_id", insertable = false, updatable = false)
+    private Integer profileId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "channel_id")
     private ChannelEntity channel;
 
+    @Column(name = "channel_id", insertable = false, updatable = false)
+    private String channelId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "video_id")
     private VideoEntity video;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(name = "video_id", insertable = false, updatable = false)
+    private String videoId;
+
+    @Column(name = "message")
     private String message;
 
-    @Column(name = "created_date", nullable = false)
-    private LocalDateTime createdDate = LocalDateTime.now();
+    @Column(name = "created_date")
+    private LocalDateTime createdDate;
 
+    @PrePersist
+    public void prePersist() {
+        this.createdDate = LocalDateTime.now();
+    }
 }

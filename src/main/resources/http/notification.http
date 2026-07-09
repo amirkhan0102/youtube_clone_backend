@@ -1,0 +1,28 @@
+### 1. Filter
+POST http://localhost:8080/api/notification/filter?page=0&size=10
+Content-Type: application/json
+Authorization: Bearer ADMIN_TOKEN
+
+{
+  "profileId": 1,
+  "channelId": null,
+  "videoId": null,
+  "dateFrom": null,
+  "dateTo": null
+}
+
+###
+
+### 2. Send Notification
+POST http://localhost:8080/api/notification/send
+Content-Type: application/json
+Authorization: Bearer ADMIN_TOKEN
+
+{
+  "profileId": 1,
+  "channelId": "CHANNEL_ID",
+  "videoId": "VIDEO_ID",
+  "message": "Yangi video yuklandi!"
+}
+
+###
