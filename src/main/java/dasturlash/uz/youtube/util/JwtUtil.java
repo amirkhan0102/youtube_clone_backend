@@ -23,6 +23,8 @@ public class JwtUtil {
     @Value("${jwt.token.validity}")
     private Long tokenValidity;
 
+
+
     private SecretKey key;
 
     @PostConstruct
@@ -61,6 +63,8 @@ public class JwtUtil {
     public String getEmail(String token) {
         return getClaims(token).getSubject();
     }
+
+
 
     // Id olish
     public Integer getId(String token) {

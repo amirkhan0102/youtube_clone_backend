@@ -54,7 +54,7 @@ public class SubscriptionService {
         entity.setProfile(profile);
         entity.setChannel(channel);
         entity.setStatus(SubscriptionStatusEnum.ACTIVE);
-        entity.setNotificationType(dto.getNotificationType());   // ← To'g'rilandi
+        entity.setNotificationType(dto.getNotificationType());
         entity.setCreatedDate(LocalDateTime.now());
 
         subscriptionRepository.save(entity);
@@ -86,7 +86,7 @@ public class SubscriptionService {
                 .findByProfileIdAndChannelId(profileId, dto.getChannelId())
                 .orElseThrow(() -> new AppBadException("Subscription not found"));
 
-        entity.setNotificationType(dto.getNotificationType());   // ← To'g'rilandi
+        entity.setNotificationType(dto.getNotificationType());
         subscriptionRepository.save(entity);
         return toInfo(entity);
     }

@@ -18,7 +18,7 @@ public class ReportEntity {
     private String content;
 
     @Column(name = "entity_id", nullable = false)
-    private String entityId; // channel_id yoki video_id
+    private String entityId;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)
